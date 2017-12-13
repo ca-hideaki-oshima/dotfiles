@@ -1,0 +1,1 @@
+/Users/oshimahideaki/dotfiles/_vimrc
