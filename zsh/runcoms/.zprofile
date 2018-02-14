@@ -2,7 +2,7 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/runcoms/zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/zprofile"
 fi
 
-export DOTFILES=$HOME/.dotfiles
+export DOTFILES=$HOME/dotfiles
 export LOCAL_ZSH_ROOT_PATH=$DOTFILES/zsh
 export LOCAL_ZSH_MODULE_PATH=${LOCAL_ZSH_ROOT_PATH}/modules
 
