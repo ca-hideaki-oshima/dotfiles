@@ -58,20 +58,18 @@ zstyle ':vcs_info:*' actionformats '%s][* %F{green}%b%f(%F{red}%a%f)'
 # rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-alias vz='vim ~/.zshrc'
-
 #Go
 alias gr='go run'
 alias gb='go build'
 
 #git
 alias g='git'
-alias pull='git pull'
-alias push='git ps'
-alias dc='git d --cached'
-alias dn='git d --name-only'
-alias br='git br'
-alias a='git add'
+alias pl='git pull'
+alias ps='git push'
+alias d='git diff'
+alias dc='git diff --cached'
+alias dn='git diff --name-only'
+alias br='git branch'
 alias co='git checkout'
 alias cob='git checkout -b'
 alias ci='git commit'
