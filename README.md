@@ -1,1 +1,8 @@
-#vimの設定ファイル
+#Dotfiles
+
+- prezto
+- zsh
+- Golang
+- ruby
+- symboliclink
+- iTerm color scheme
