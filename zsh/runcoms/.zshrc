@@ -58,6 +58,11 @@ zstyle ':vcs_info:*' actionformats '%s][* %F{green}%b%f(%F{red}%a%f)'
 # rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
+
+#########
+# alias #
+#########
+
 #Go
 alias gr='go run'
 alias gb='go build'

@@ -15,7 +15,7 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 
 # go
-export GOPATH=$HOME/dev
+export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export GO15VENDOREXPERIMENT=1
 
