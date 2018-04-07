@@ -70,7 +70,7 @@ alias gb='go build'
 #git
 alias g='git'
 alias pl='git pull'
-alias ps='git push'
+alias gp='git push'
 alias d='git diff'
 alias dc='git diff --cached'
 alias dn='git diff --name-only'
