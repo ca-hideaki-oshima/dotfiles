@@ -11,4 +11,4 @@ ln -snf "$HOME"/dotfiles/zsh/runcoms/.zshrc "$HOME"/.zshrc
 # ln -snf "$ZDOTDIR" "$HOME"/.zsh
 
 #vim
-ln -snf "$BASHDIR"/.vimrc "$HOME"/.vimrc
+ln -snf "$HOME"/dotfiles/.vimrc "$HOME"/.vimrc
