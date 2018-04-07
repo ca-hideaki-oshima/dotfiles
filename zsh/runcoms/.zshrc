@@ -81,3 +81,9 @@ alias ci='git commit'
 alias st='git status'
 alias lg='git log'
 alias ad='git add'
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/oshimahideaki/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/oshimahideaki/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/oshimahideaki/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/oshimahideaki/google-cloud-sdk/completion.zsh.inc'; fi
