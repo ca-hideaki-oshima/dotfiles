@@ -21,9 +21,6 @@ set number
 "インデントの設定
 set autoindent
 
-"新しい行を作ったときに高度な自動インデントを行う
-set smartindent
-
 "シフト移動幅
 set shiftwidth=2
 

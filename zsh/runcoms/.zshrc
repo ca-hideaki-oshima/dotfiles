@@ -5,6 +5,8 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
+export XDG_CONFIG_HOME=$HOME/.config
+
 # origin
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/runcoms/zshrc" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/zshrc"
@@ -81,6 +83,9 @@ alias ci='git commit'
 alias st='git status'
 alias lg='git log'
 alias ad='git add'
+
+#nvim
+alias vi='nvim'
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/oshimahideaki/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/oshimahideaki/google-cloud-sdk/path.zsh.inc'; fi
