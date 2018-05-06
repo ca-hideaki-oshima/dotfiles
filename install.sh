@@ -1,6 +1,6 @@
 #!/bin/sh
 
-BASEDIR="$HOME"/dotfiles
+BASEDIR="$HOME"/.dotfiles
 ZDOTDIR=$BASEDIR/zsh
 IDOTDIR=$BASEDIR/install
 
