@@ -49,7 +49,7 @@ set clipboard=unnamed
 set guicursor=n-v-c:block-Cursor
 set guicursor+=i:ver100-iCursor
 set guicursor+=n-v-c:blinkon1
-set guicursor+=i:blinkwait10
+set guicursor+=i:blinkwait1
 
 " バックアップファイルを作らない
 set nobackup
@@ -62,7 +62,7 @@ set showcmd
 " 現在の行を強調表示
 set cursorline
 " 現在の行を強調表示（縦）
-set cursorcolumn
+" set cursorcolumn
 " コマンドラインの補完
 set wildmode=list:longest
 " タブの代わりにスペースを挿入する
@@ -84,6 +84,8 @@ set smartcase
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
+" let g:deoplete#sources#clang#libclang_path = '/usr/lib/llvm-3.8/lib/libclang-3.8.so.1'
+" let g:deoplete#sources#clang#clang_header = '/usr/include/clang'
 
 " deoplete-go settings
 let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
@@ -162,11 +164,16 @@ filetype on
 set rtp+=$GOROOT/misc/vim
 filetype plugin indent on
 syntax on
-autocmd FileType go autocmd BufWritePre <buffer> Fmt
+autocmd FileType go 
+" autocmd BufWritePre <buffer> Fmt
 
 " golint
 set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
 let g:syntastic_go_checkers = ['go', 'golint']
 
-" GoFmtなどkeybind
-
+" clang settings
+autocmd FileType c ClangFormatAutoEnable
+let g:clang_c_options = '-std=c11'
+let g:clang_format_auto = 1
+let g:clang_format_style = 'Google'
+let g:clang_check_syntax_auto = 1

@@ -2,6 +2,10 @@
 repo = 'scrooloose/nerdtree'
 
 [[plugins]]
+repo = 'Xuyuanp/nerdtree-git-plugin'
+
+#{{{ Go
+[[plugins]]
 repo = 'fatih/vim-go'
 on_ft = 'go'
 hook-source = '''
@@ -31,21 +35,17 @@ hook-source = '''
 '''
 
 [[plugins]]
-# deoplete
+repo = 'zchee/deoplete-go'
+build =  'make'
+#}}}
+
+[[plugins]]
 repo = 'Shougo/deoplete.nvim'
 hook_post_source = '''
     let g:deoplete#sources#clang#libclang_path = '/usr/lib/llvm-3.8/lib/libclang-3.8.so.1'
     let g:deoplete#sources#clang#clang_header = '/usr/include/clang'
     let g:deoplete#enable_at_startup = 1
 '''
-
-[[plugins]]
-# deoplete-clang
-repo = 'zchee/deoplete-clang'
-
-[[plugins]]
-repo = 'zchee/deoplete-go'
-build =  'make'
 
 [[plugins]]
 repo = 'vim-airline/vim-airline'
@@ -55,3 +55,67 @@ repo = 'vim-airline/vim-airline-themes'
 
 [[plugins]]
 repo = 'tpope/vim-pathogen'
+
+#{{{ Clang
+[[plugins]]
+repo = 'justmao945/vim-clang'
+
+[[plugins]]
+repo = 'rhysd/vim-clang-format'
+
+[[plugins]]
+repo = 'zchee/deoplete-clang'
+hook_source = '''
+let g:deoplete#sources#clang#libclang_path = '/usr/lib/llvm-3.8/lib/libclang-3.8.so.1'
+let g:deoplete#sources#clang#clang_header = '/usr/include/clang'
+'''
+on_ft = ['c', 'cpp', 'cmake']
+depends = ['deoplete.nvim']
+#}}}
+
+#{{{ Ruby
+[[plugins]]
+repo = 'vim-ruby/vim-ruby'
+on_ft = ['ruby', 'eruby', 'haml']
+
+[[plugins]]
+repo = 'vim-scripts/ruby-matchit'
+on_ft = ['ruby', 'eruby', 'haml']
+
+[[plugins]]
+repo = 'skwp/vim-rspec'
+on_ft = 'ruby'
+
+[[plugins]]
+repo = 'Keithbsmiley/rspec.vim'
+on_ft = 'ruby'
+
+[[plugins]]
+repo = 'tpope/vim-rails'
+on_ft = 'ruby'
+
+[[plugins]]
+repo = 'ngmy/vim-rubocop'
+#}}}
+
+#{{{ JSON
+[[plugins]] # Preview
+repo = 'elzr/vim-json'
+on_ft = 'javascript'
+#}}}
+
+#{{{ TOML
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = 'toml'
+#}}}
+
+#{{{ SQL
+[[plugins]]
+repo = 'vim-scripts/SQLUtilities'
+on_ft = 'sql'
+
+[[plugins]]
+repo = 'vim-scripts/Align'
+on_ft = 'sql'
+#}}}
