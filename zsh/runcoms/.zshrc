@@ -60,6 +60,11 @@ zstyle ':vcs_info:*' actionformats '%s][* %F{green}%b%f(%F{red}%a%f)'
 # rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
+# pyenv
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 #########
 # alias #
@@ -84,6 +89,13 @@ alias st='git status'
 alias lg='git log'
 alias ad='git add'
 
+#ruby
+alias rs='rails s'
+alias bi='bundle'
+alias bu='bundle update'
+alias create='bundle exec rails db:create'
+alias mig='bundle exec rails db:migrate'
+
 #nvim
 alias vi='nvim'
 
@@ -92,3 +104,6 @@ if [ -f '/Users/oshimahideaki/google-cloud-sdk/path.zsh.inc' ]; then source '/Us
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/oshimahideaki/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/oshimahideaki/google-cloud-sdk/completion.zsh.inc'; fi
+
+export PATH=$PATH:~/.nodebrew/current/bin
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"

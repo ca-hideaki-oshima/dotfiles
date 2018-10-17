@@ -4,6 +4,9 @@ repo = 'scrooloose/nerdtree'
 [[plugins]]
 repo = 'Xuyuanp/nerdtree-git-plugin'
 
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+
 #{{{ Go
 [[plugins]]
 repo = 'fatih/vim-go'
@@ -37,15 +40,9 @@ hook-source = '''
 [[plugins]]
 repo = 'zchee/deoplete-go'
 build =  'make'
+on_ft = 'go'
+depends = ['deoplete.nvim']
 #}}}
-
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
-hook_post_source = '''
-    let g:deoplete#sources#clang#libclang_path = '/usr/lib/llvm-3.8/lib/libclang-3.8.so.1'
-    let g:deoplete#sources#clang#clang_header = '/usr/include/clang'
-    let g:deoplete#enable_at_startup = 1
-'''
 
 [[plugins]]
 repo = 'vim-airline/vim-airline'
@@ -58,19 +55,19 @@ repo = 'tpope/vim-pathogen'
 
 #{{{ Clang
 [[plugins]]
+repo = 'zchee/deoplete-clang'
+on_ft = ['c', 'cpp', 'cmake']
+depends = ['deoplete.nvim']
+hook_add = '''
+let g:deoplete#sources#clang#libclang_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib'
+let g:deoplete#sources#clang#clang_header='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang'
+'''
+
+[[plugins]]
 repo = 'justmao945/vim-clang'
 
 [[plugins]]
 repo = 'rhysd/vim-clang-format'
-
-[[plugins]]
-repo = 'zchee/deoplete-clang'
-hook_source = '''
-let g:deoplete#sources#clang#libclang_path = '/usr/lib/llvm-3.8/lib/libclang-3.8.so.1'
-let g:deoplete#sources#clang#clang_header = '/usr/include/clang'
-'''
-on_ft = ['c', 'cpp', 'cmake']
-depends = ['deoplete.nvim']
 #}}}
 
 #{{{ Ruby
@@ -96,12 +93,19 @@ on_ft = 'ruby'
 
 [[plugins]]
 repo = 'ngmy/vim-rubocop'
+
+[[plugins]]
+repo = 'ruby-formatter/rufo-vim'
+hook_add = '''
+let g:rufo_auto_formatting = 1
+'''
 #}}}
 
 #{{{ JSON
 [[plugins]] # Preview
 repo = 'elzr/vim-json'
 on_ft = 'javascript'
+hook_add = 'let g:vim_json_syntax_conceal = 0'
 #}}}
 
 #{{{ TOML
