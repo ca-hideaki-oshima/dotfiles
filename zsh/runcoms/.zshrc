@@ -99,6 +99,12 @@ alias mig='bundle exec rails db:migrate'
 #nvim
 alias vi='nvim'
 
+# peco
+alias aws='ssh $(grep -iE "^host[[:space:]]+[^*]" ~/.ssh/config|peco|awk "{print \$2}")'
+
+# dynamodb
+alias go-dynamo='java -Djava.library.path=~/dynamodb/dynamodb_local_latest/DynamoDBLocal_lib -jar ~/dynamodb/dynamodb_local_latest/DynamoDBLocal.jar -sharedDb &'
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/oshimahideaki/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/oshimahideaki/google-cloud-sdk/path.zsh.inc'; fi
 

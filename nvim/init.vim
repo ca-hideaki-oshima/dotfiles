@@ -1,5 +1,5 @@
 "deinの初期設定
-set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=~/github.com/Shougo/dein.vim
 
 let s:dein_dir = expand('~/.vim/dein')
 let s:toml_dir = expand('~/.config/nvim')
@@ -24,6 +24,7 @@ endif
 if dein#check_install(['vimproc'])
   call dein#install(['vimproc'])
 endif
+
 " その他インストールしていないものはこちらに入れる
 if dein#check_install()
   call dein#install()
@@ -46,10 +47,10 @@ set wildmode=longest:full,full
 set clipboard=unnamed
 
 " インサートモードでのカーソルの設定
-set guicursor=n-v-c:block-Cursor
-set guicursor+=i:ver100-iCursor
-set guicursor+=n-v-c:blinkon1
-set guicursor+=i:blinkwait1
+"set guicursor=n-v-c:block-Cursor
+"set guicursor+=i:ver100-iCursor
+"set guicursor+=n-v-c:blinkon1
+"set guicursor+=i:blinkwait0.5
 
 
 " バックアップファイルを作らない
@@ -64,6 +65,11 @@ set showcmd
 set cursorline
 " 現在の行を強調表示（縦）
 " set cursorcolumn
+
+" cursorの設定
+let &t_SI = "\e]50;CursorShape=1\x7"
+let &t_EI = "\e]50;CursorShape=0\x7"
+
 " コマンドラインの補完
 set wildmode=list:longest
 " タブの代わりにスペースを挿入する

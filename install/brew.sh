@@ -21,12 +21,24 @@ brew install nodebrew
 brew install rbenv
 brew install ruby-build
 
+# python
+brew install pyenv
+
 # mysql
 brew install mycli
 
 # redis
 brew install redis
 
+# java
+# sbt@0.13に合わせる為にopenjdk8をinstallしている
+brew cask install homebrew/cask-versions/adoptopenjdk8
+
+# sbt
+brew install sbt@0.13
+
+# nvim
+brew install neovim/neovim/neovim
 
 ########
 # Cask #
