@@ -58,7 +58,9 @@ zstyle ':vcs_info:*' formats '%s][* %F{green}%b%f'
 zstyle ':vcs_info:*' actionformats '%s][* %F{green}%b%f(%F{red}%a%f)'
 
 # rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+#if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init - zsh)"
 
 # pyenv
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
@@ -69,10 +71,6 @@ eval "$(pyenv init -)"
 #########
 # alias #
 #########
-
-#Go
-alias gr='go run'
-alias gb='go build'
 
 #git
 alias g='git'
@@ -88,6 +86,8 @@ alias ci='git commit'
 alias st='git status'
 alias lg='git log'
 alias ad='git add'
+alias gr='git rebase'
+alias gf='git fetch'
 
 #ruby
 alias rs='rails s'
@@ -104,6 +104,10 @@ alias aws='ssh $(grep -iE "^host[[:space:]]+[^*]" ~/.ssh/config|peco|awk "{print
 
 # dynamodb
 alias go-dynamo='java -Djava.library.path=~/dynamodb/dynamodb_local_latest/DynamoDBLocal_lib -jar ~/dynamodb/dynamodb_local_latest/DynamoDBLocal.jar -sharedDb &'
+
+# memcached
+alias memcached-start='memcached -u memcached -d -m 4096 -l 127.0.0.1'
+alias memcached-stop='sudo killall memcached'
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/oshimahideaki/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/oshimahideaki/google-cloud-sdk/path.zsh.inc'; fi

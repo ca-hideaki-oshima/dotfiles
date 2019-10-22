@@ -5,9 +5,11 @@ fi
 export DOTFILES=$HOME/.dotfiles
 export LOCAL_ZSH_ROOT_PATH=$DOTFILES/zsh
 export LOCAL_ZSH_MODULE_PATH=${LOCAL_ZSH_ROOT_PATH}/modules
-export LOCAL_ZSH_RUNCOMS_PATH=${LOCAL_ZSH_RUNCOMS_PATH}/runcoms
+export LOCAL_ZSH_RUNCOMS_PATH=${LOCAL_ZSH_ROOT_PATH}/runcoms
 
 source "${LOCAL_ZSH_MODULE_PATH}/export.zsh"
+source "${LOCAL_ZSH_RUNCOMS_PATH}/.zshrc"
+source "/Users/s04955/.dotfiles/zsh/runcoms/.zshrc"
 
 #
 # Executes commands at login pre-zshrc.
@@ -43,7 +45,9 @@ fi
 #
 # Paths
 #
-
+export RBENV_ROOT=/usr/local/var/rbenv
+eval "$(rbenv init - zsh)"
+if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
 # Ensure path arrays do not contain duplicates.
 typeset -gU cdpath fpath mailpath path
 
